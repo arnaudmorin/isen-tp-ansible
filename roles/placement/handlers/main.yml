@@ -1,0 +1,6 @@
+- name: restart placement
+  service:
+    name: "{{item}}"
+    state: restarted
+  with_items:
+    - "placement-api"

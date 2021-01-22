@@ -1,0 +1,7 @@
+- name: restart neutron
+  service:
+    name: "{{item}}"
+    state: restarted
+  with_items:
+    - "neutron-api"
+    - "neutron-rpc-server"
