@@ -1,9 +1,9 @@
 ---
 - name: import generic tasks
-  import_tasks: common.yml
+  # TODO TP
 
 - name: include vars
-  include_vars: vars/vars.yml
+  # TODO TP
 
 - name: install packages
   apt:
@@ -25,7 +25,7 @@
 
 - name: configure nova
   ini_file:
-    path: /etc/nova/nova.conf
+    path: # TODO TP
     section: "{{item.section}}"
     option: "{{item.option}}"
     value: "{{item.value}}"
@@ -106,7 +106,7 @@
 
 - name: configure neutron
   ini_file:
-    path: /etc/neutron/neutron.conf
+    path: # TODO TP
     section: "{{item.section}}"
     option: "{{item.option}}"
     value: "{{item.value}}"

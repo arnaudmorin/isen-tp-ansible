@@ -1,18 +1,19 @@
 ---
 - name: import generic tasks
-  import_tasks: common.yml
+  # TODO TP
 
 - name: include vars
-  include_vars: vars/vars.yml
+  # TODO TP
 
+# Voir https://docs.openstack.org/nova/ussuri/install/controller-install-ubuntu.html#install-and-configure-components
 - name: install nova
   apt:
-    name: ['nova-api', 'nova-conductor', 'nova-consoleproxy', 'nova-scheduler']
+    name: ['nova-consoleproxy', ... ] # TODO TP
     state: latest
 
 - name: configure nova
   ini_file:
-    path: /etc/nova/nova.conf
+    path: # TODO TP
     section: "{{item.section}}"
     option: "{{item.option}}"
     value: "{{item.value}}"

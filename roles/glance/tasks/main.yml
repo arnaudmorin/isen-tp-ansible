@@ -1,9 +1,9 @@
 ---
 - name: import generic tasks
-  import_tasks: common.yml
+  # TODO TP
 
 - name: include vars
-  include_vars: vars/vars.yml
+  # TODO TP
 
 - name: install glance
   apt:
