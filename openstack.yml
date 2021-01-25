@@ -38,3 +38,9 @@
   hosts: compute-*
   roles:
   - {role: 'compute', tags: 'compute'}
+
+- name: Install bastion
+  hosts: bastion-*
+  roles:
+  - {role: 'bastion', tags: 'bastion'}
+
