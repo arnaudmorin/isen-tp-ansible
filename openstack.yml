@@ -25,3 +25,6 @@
 #
 #- name: Install compute
 # ...
+
+#- name: Install bastion
+# ...
