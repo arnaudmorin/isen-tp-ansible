@@ -117,7 +117,6 @@
     - neutron
     - placement
     - glance
-    - designate
 - name: add admin role to users for service project
   shell: |
     source /root/openrc_admin
@@ -134,7 +133,6 @@
     - neutron
     - placement
     - glance
-    - designate
 - name: create services
   shell: |
     source /root/openrc_admin
@@ -205,21 +203,6 @@
   args:
     executable: /bin/bash
     creates: /root/.ansible_endpoint_neutron_{{item}}
-  with_items:
-    - public
-    - admin
-    - internal
-
-- name: create services endpoints for designate
-  shell: |
-    source /root/openrc_admin
-    openstack endpoint create \
-      --region RegionOne \
-      dns {{item}} http://{{hostvars['designate']['public_ip']}}:9001
-    [ $? -eq 0 ] && touch /root/.ansible_endpoint_designate_{{item}}
-  args:
-    executable: /bin/bash
-    creates: /root/.ansible_endpoint_designate_{{item}}
   with_items:
     - public
     - admin
